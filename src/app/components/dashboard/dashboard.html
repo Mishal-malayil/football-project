@@ -1,0 +1,38 @@
+<div class="dashboard-container">
+
+  <h1>⚽ Football Tournament Dashboard</h1>
+
+  <div class="card-grid">
+
+    <mat-card class="dash-card">
+      <h2>Total Teams</h2>
+      <p>Manage and view all registered teams.</p>
+      <button mat-raised-button color="primary" (click)="go('/teams')">View Teams</button>
+    </mat-card>
+
+    <mat-card class="dash-card">
+      <h2>Fixtures</h2>
+      <p>Upcoming and completed matches.</p>
+      <button mat-raised-button color="accent" (click)="go('/fixtures')">View Fixtures</button>
+    </mat-card>
+
+    <mat-card class="dash-card">
+      <h2>Add New Team</h2>
+      <p>Create a new team for the tournament.</p>
+      <button mat-raised-button color="warn" (click)="go('/add-team')">Add Team</button>
+    </mat-card>
+
+    <mat-card class="dash-card">
+      <h2>Add Fixture</h2>
+      <p>Schedule a new match.</p>
+      <button mat-raised-button color="primary" (click)="go('/add-fixtures')">Add Fixture</button>
+    </mat-card>
+
+    <mat-card class="dash-card">
+      <h2>Leaderboard</h2>
+      <p>Rankings based on match results.</p>
+      <button mat-raised-button color="accent" (click)="go('/leaderboard')">View Leaderboard</button>
+    </mat-card>
+
+  </div>
+</div>

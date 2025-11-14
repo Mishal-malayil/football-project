@@ -1,0 +1,31 @@
+.dashboard-container {
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.dash-card {
+  padding: 20px;
+  text-align: left;
+}
+
+.dash-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
