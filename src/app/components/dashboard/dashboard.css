@@ -1,6 +1,7 @@
 .dashboard-container {
   padding: 30px;
   text-align: center;
+  background-color:cornsilk;
 }
 
 h1 {
@@ -19,8 +20,13 @@ h1 {
 .dash-card {
   padding: 20px;
   text-align: left;
-}
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 
+}
+.dash-card:hover{
+   transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
 .dash-card h2 {
   font-size: 22px;
   margin-bottom: 10px;
