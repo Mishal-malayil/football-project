@@ -1,1 +1,55 @@
-<p>add-team works!</p>
+<div class="team-wrapper">
+
+  <mat-card class="team-card">
+    <mat-card-header>
+      <mat-card-title>Add New Team</mat-card-title>
+      <mat-card-subtitle>Enter the details below to register a team</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" #teamForm="ngForm" class="form-layout">
+
+        <!-- Team Name -->
+        <mat-form-field appearance="outline">
+          <mat-label>Team Name</mat-label>
+          <input matInput required [(ngModel)]="team.name" name="name" placeholder="Ex: FC Malappuram">
+        </mat-form-field>
+
+        <!-- Manager Name -->
+        <mat-form-field appearance="outline">
+          <mat-label>Manager Name</mat-label>
+          <input matInput required [(ngModel)]="team.manager" name="manager" placeholder="Ex: Rahim KP">
+        </mat-form-field>
+
+        <!-- Number of Players -->
+        <mat-form-field appearance="outline">
+          <mat-label>Total Players</mat-label>
+          <input matInput type="number" required [(ngModel)]="team.players" name="players" placeholder="Ex: 18">
+        </mat-form-field>
+
+        <!-- Logo Upload Box -->
+        <div class="upload-container">
+          <label class="upload-label">Team Logo</label>
+
+          <div class="upload-box" (click)="fileInput.click()">
+            <mat-icon>cloud_upload</mat-icon>
+            <p>Click to upload logo</p>
+            <input #fileInput type="file" hidden (change)="onLogoSelected($event)">
+          </div>
+
+          <img *ngIf="previewLogo" [src]="previewLogo" class="preview-logo">
+
+        </div>
+
+        <!-- Save Button -->
+        <button mat-raised-button color="primary" class="submit-btn">
+          <mat-icon>check_circle</mat-icon> Save Team
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>
