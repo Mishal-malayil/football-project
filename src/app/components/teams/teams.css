@@ -1,0 +1,59 @@
+.teams-wrapper {
+  padding: 25px;
+}
+
+.page-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  border-radius: 16px;
+  padding-bottom: 10px;
+  transition: 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.team-logo-wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.team-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.team-name {
+  font-size: 20px;
+  margin: 10px 0 5px 0;
+  font-weight: 600;
+}
+
+.manager, .players {
+  font-size: 14px;
+  color: #555;
+}
+
+.manager span, .players span {
+  font-weight: 500;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px 10px;
+}
