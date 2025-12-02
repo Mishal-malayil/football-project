@@ -9,24 +9,24 @@
     <mat-divider></mat-divider>
 
     <mat-card-content>
-      <form (ngSubmit)="onSubmit()" #teamForm="ngForm" class="form-layout">
+      <form (ngSubmit)="onSubmit()" #teamForm="ngForm" class="form-layout" method="POST">
 
         <!-- Team Name -->
         <mat-form-field appearance="outline">
           <mat-label>Team Name</mat-label>
-          <input matInput required [(ngModel)]="team.name" name="name" placeholder="Ex: FC Malappuram">
+          <input matInput required [(ngModel)]="TeamName" name="name" placeholder="Ex: FC Malappuram">
         </mat-form-field>
 
         <!-- Manager Name -->
         <mat-form-field appearance="outline">
           <mat-label>Manager Name</mat-label>
-          <input matInput required [(ngModel)]="team.manager" name="manager" placeholder="Ex: Rahim KP">
+          <input matInput required [(ngModel)]="TeamManager" name="manager" placeholder="Ex: Rahim KP">
         </mat-form-field>
 
         <!-- Number of Players -->
         <mat-form-field appearance="outline">
           <mat-label>Total Players</mat-label>
-          <input matInput type="number" required [(ngModel)]="team.players" name="players" placeholder="Ex: 18">
+          <input matInput type="number" required [(ngModel)]="TotalPlayers" name="players" placeholder="Ex: 18">
         </mat-form-field>
 
         <!-- Logo Upload Box -->
@@ -36,7 +36,7 @@
           <div class="upload-box" (click)="fileInput.click()">
             <mat-icon>cloud_upload</mat-icon>
             <p>Click to upload logo</p>
-            <input #fileInput type="file" hidden (change)="onLogoSelected($event)">
+            <input #fileInput type="file" hidden (change)="OnLogoSelected($event)">
           </div>
 
           <img *ngIf="previewLogo" [src]="previewLogo" class="preview-logo">
@@ -47,6 +47,11 @@
         <button mat-raised-button color="primary" class="submit-btn">
           <mat-icon>check_circle</mat-icon> Save Team
         </button>
+
+
+         <button mat-raised-button color="warn" type="button" (click)="resetForm()">
+    <mat-icon>refresh</mat-icon> Reset
+  </button>
 
       </form>
     </mat-card-content>

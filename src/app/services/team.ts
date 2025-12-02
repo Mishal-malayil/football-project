@@ -9,12 +9,12 @@ export class Team {
 
   constructor(private http: HttpClient) {}
 
-  addTeam(data: any) {
-    return this.http.post(`${this.apiUrl}/add_team.php`, data);
-  }
+  addTeam(data: FormData) {
+  return this.http.post(this.apiUrl + 'add_team.php', data);
+}
 
   getTeams() {
-    return this.http.get(`${this.apiUrl}/get_teams.php`);
+    return this.http.get(this.apiUrl+ 'get_teams.php');
   }
 }
 

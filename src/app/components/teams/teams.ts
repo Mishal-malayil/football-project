@@ -12,28 +12,21 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './teams.css',
 })
 export class Teams {
-teams:any[]=[];
 
- constructor() {
-    this.loadTeams();
-  }
 
-  // Load from localStorage
-  loadTeams() {
-    const savedTeams = localStorage.getItem('teams');
-    if (savedTeams) {
-      this.teams = JSON.parse(savedTeams);
-    } else {
-      // Optional: Default teams when no data
-      this.teams = [
-        {
-          
-        },
-        {
-        
-        }
-      ];
-    }
-  }
+ teams: any[] = [];   // store team list
 
+constructor(private team: Team) {
+  this.loadTeams();
 }
+
+loadTeams() {
+  this.team.getTeams().subscribe((res: any) => {
+    console.log("Loaded teams = ", res);
+    this.teams = res;     // store response in teams[]
+  });
+}
+
+  }
+
+
