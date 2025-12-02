@@ -8,7 +8,7 @@ import { Leaderboard } from './components/leaderboard/leaderboard';
 
 
 export const routes: Routes = [
-    {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     {path:'dashboard',component:Dashboard},
     {path:'teams',component:Teams},
     {path:'add-team',component:AddTeam},

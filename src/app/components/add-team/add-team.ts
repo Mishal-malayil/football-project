@@ -27,8 +27,6 @@ import { Team } from '../../services/team';
 })
 export class AddTeam {
 
-
-  
     TeamName:string='';
     TeamManager:string='';
     TotalPlayers:number |null=null;
@@ -41,42 +39,45 @@ export class AddTeam {
     constructor(private team: Team) {}
 
      OnLogoSelected(event: any) {
-    this.TeamLogo = event.target.files[0];
+  this.TeamLogo = event.target.files[0];
 
+    if (this.TeamLogo) {
     const reader = new FileReader();
     reader.onload = () => {
       this.previewLogo = reader.result;
     };
-    
+    reader.readAsDataURL(this.TeamLogo);  // <-- REQUIRED
   }
-
-   onSubmit() {
-    if (!this.TeamName || !this.TeamManager || !this.TotalPlayers || !this.TeamLogo) {
-      alert("All fields are required!");
-      return;
-    }
-
-
-    const formData = new FormData();
-
-formData.append('team_name', this.TeamName);
-formData.append('team_manager', this.TeamManager);
-formData.append('total_players', this.TotalPlayers.toString());
-formData.append('team_logo', this.TeamLogo);
+}
+    
   
 
+onSubmit() {
+  if (!this.TeamName || !this.TeamManager || !this.TotalPlayers || !this.TeamLogo) {
+    alert("All fields are required!");
+    return;
+  }
 
-    this.team.addTeam(formData).subscribe(
-      (response: any) => {
-        console.log("Team added successfully:", response);
-        alert("Team added successfully!");
-        this.resetForm();
-      },
-      (error) => {
-        console.error("Error adding team:", error);
-        alert("Error adding team!");
-      }
-    );
+  const formData = new FormData();
+  formData.append('team_name', this.TeamName);
+  formData.append('team_manager', this.TeamManager);
+  formData.append('total_players', this.TotalPlayers.toString());
+  formData.append('team_logo', this.TeamLogo);
+
+  this.team.addTeam(formData).subscribe({
+    next: (res: any) => {
+      console.log(res);
+      alert("Team Added Successfully!");
+      this.resetForm();
+    },
+    error: (err: any) => {
+      console.error(err);
+      alert("Error adding team!");
+    }
+  });
+
+
+
   }
      resetForm() {
     this.TeamName = '';
