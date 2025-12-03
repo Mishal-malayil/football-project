@@ -9,16 +9,17 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class Team {
 
-  apiUrl = "http://localhost/football_api";
+  addteamapiUrl = "http://localhost/football_api/add_team.php";
+  getteamapiUrl ="http://localhost/football_api/get_teams.php";
 
   constructor(private http: HttpClient) {}
 
   addTeam(data: FormData): Observable<any> {
-    return this.http.post(`${this.apiUrl}/add_team.php`, data);
+    return this.http.post(`${this.addteamapiUrl}/add_team.php`, data);
   }
 
   getTeams(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/get_teams.php`);
+    return this.http.get(`${this.getteamapiUrl}/get_teams.php`);
   }
 }
 

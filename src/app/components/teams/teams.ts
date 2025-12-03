@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Team } from '../../services/team';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,22 +11,29 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './teams.html',
   styleUrl: './teams.css',
 })
-export class Teams {
+export class Teams implements OnInit {
 
 
- teams: any[] = [];   // store team list
+  teams: any[] = [];
 
-constructor(private team: Team) {
-  this.loadTeams();
-}
+  constructor(private teamService: Team) {}
 
-loadTeams() {
-  this.team.getTeams().subscribe((res: any) => {
-    console.log("Loaded teams = ", res);
-    this.teams = res;     // store response in teams[]
-  });
-}
-
+  ngOnInit() {
+    this.loadTeams();
   }
+
+  loadTeams() {
+    this.teamService.getTeams().subscribe({
+      next: (data: any) => {
+        this.teams = data;
+        console.log("Teams Loaded:", data);
+      },
+      error: (err) => {
+        console.error("Error loading teams", err);
+      }
+    });
+  }
+  
+}
 
 

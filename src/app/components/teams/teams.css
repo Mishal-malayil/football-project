@@ -1,59 +1,64 @@
-.teams-wrapper {
-  padding: 25px;
-}
-
-.page-title {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.teams-grid {
+/* Whole container layout */
+.team-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
+  padding: 20px;
 }
 
+/* Card Box */
 .team-card {
-  border-radius: 16px;
-  padding-bottom: 10px;
-  transition: 0.2s ease;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
 }
 
+/* Card Hover Effect */
 .team-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.team-logo-wrapper {
-  text-align: center;
-  margin-top: 15px;
-}
 
-.team-logo {
-  width: 90px;
-  height: 90px;
-  border-radius: 12px;
-  object-fit: cover;
-}
 
-.team-name {
+/* Team Name */
+.team-info h2 {
+  margin: 10px 0;
   font-size: 20px;
-  margin: 10px 0 5px 0;
-  font-weight: 600;
+  font-weight: 700;
+  text-align: center;
+  color: #222;
 }
 
-.manager, .players {
-  font-size: 14px;
+/* Details */
+.team-info p {
+  margin: 4px 0;
+  font-size: 15px;
   color: #555;
+  text-align: center;
 }
 
-.manager span, .players span {
-  font-weight: 500;
+/* Bold Labels */
+.team-info strong {
+  font-weight: 600;
+  color: #333;
 }
-
-mat-card-actions {
+.team-logo {
   display: flex;
-  justify-content: space-between;
-  padding: 0 10px 10px 10px;
+  justify-content: center;
+  align-items: center;
+  height: 160px;           /* fixed box height */
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.team-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }

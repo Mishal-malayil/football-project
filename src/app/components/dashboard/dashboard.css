@@ -2,7 +2,13 @@
 .dashboard-container {
   padding: 30px;
   text-align: center;
-  background-color:cornsilk;
+  display: block;
+  background: url('/assets/bg.gif') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  
+  
 }
 
 h1 {
@@ -36,3 +42,4 @@ h1 {
 button {
   margin-top: 10px;
 }
+
