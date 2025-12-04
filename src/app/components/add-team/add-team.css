@@ -1,7 +1,13 @@
+.main{
+  background-image: url('/assets/bgg.jpg');
+  background-size: cover;
+}
 .team-wrapper {
   max-width: 650px;
   margin: auto;
   padding: 30px;
+  
+  
 }
 
 .team-card {

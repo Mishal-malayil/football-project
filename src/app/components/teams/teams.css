@@ -1,3 +1,8 @@
+.main{
+  background-image: url('/assets/bgg.jpg');
+  background-size: cover;
+  height: 100%;
+}
 /* Whole container layout */
 .team-container {
   display: grid;
@@ -6,7 +11,7 @@
   padding: 20px;
 }
 
-/* Card Box */
+
 .team-card {
   background: #ffffff;
   border-radius: 15px;
