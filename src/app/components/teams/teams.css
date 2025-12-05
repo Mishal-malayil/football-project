@@ -1,7 +1,7 @@
 .main{
   background-image: url('/assets/bgg.jpg');
-  background-size: cover;
-  height: 100%;
+  background-size:cover;
+  height: 100vh;
 }
 /* Whole container layout */
 .team-container {
@@ -44,7 +44,7 @@
   margin: 4px 0;
   font-size: 15px;
   color: #555;
-  text-align: center;
+  text-align: start;
 }
 
 /* Bold Labels */

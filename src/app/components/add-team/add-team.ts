@@ -29,6 +29,7 @@ export class AddTeam {
 
     TeamName:string='';
     TeamManager:string='';
+    Phone:number |null=null;
     TotalPlayers:number |null=null;
     TeamLogo:File | null=null;
 
@@ -53,7 +54,7 @@ export class AddTeam {
   
 
 onSubmit() {
-  if (!this.TeamName || !this.TeamManager || !this.TotalPlayers || !this.TeamLogo) {
+  if (!this.TeamName || !this.TeamManager || !this.Phone|| !this.TotalPlayers || !this.TeamLogo) {
     alert("All fields are required!");
     return;
   }
@@ -61,6 +62,7 @@ onSubmit() {
   const formData = new FormData();
   formData.append('team_name', this.TeamName);
   formData.append('team_manager', this.TeamManager);
+  formData.append('phone_num',this.Phone.toString());
   formData.append('total_players', this.TotalPlayers.toString());
   formData.append('team_logo', this.TeamLogo);
 
@@ -82,6 +84,7 @@ onSubmit() {
      resetForm() {
     this.TeamName = '';
     this.TeamManager = '';
+    this.Phone=null;
     this.TotalPlayers = null;
     this.TeamLogo = null;
     this.previewLogo=null;
