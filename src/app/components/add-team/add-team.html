@@ -27,7 +27,7 @@
         <!----Mobile number-->
         <mat-form-field appearance="outline">
           <mat-label>Mobile Number</mat-label>
-          <input matInput required [(ngModel)]="Phone" name="Phone" placeholder="Ex: 9348433890">
+          <input matInput required [(ngModel)]="Phone" name="Phone" placeholder="Ex: 9348433890"  oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="10">
         </mat-form-field>
 
         <!-- Number of Players -->
