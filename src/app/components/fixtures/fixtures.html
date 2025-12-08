@@ -3,25 +3,6 @@
 
   <h2>Add New Fixture</h2>
 
-  <label>Team 1:</label>
-  <select [(ngModel)]="team1_id">
-    <option *ngFor="let t of teams" [value]="t.id">{{ t.TeamName }}</option>
-  </select>
-
-  <label>Team 2:</label>
-  <select [(ngModel)]="team2_id">
-    <option *ngFor="let t of teams" [value]="t.id">{{ t.TeamName }}</option>
-  </select>
-
-  <label>Match Date:</label>
-  <input type="date" [(ngModel)]="match_date">
-
-  <label>Match Time:</label>
-  <input type="time" [(ngModel)]="match_time">
-
-  <label>Stadium:</label>
-  <input type="text" placeholder="Stadium Name" [(ngModel)]="stadium">
-
-  <button (click)="addFixture()">Add Fixture</button>
+   
 
 </div>
