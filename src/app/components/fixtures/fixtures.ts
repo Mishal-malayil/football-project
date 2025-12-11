@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fixtures',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './fixtures.html',
   styleUrl: './fixtures.css',
 })
