@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-leaderboard',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './leaderboard.html',
   styleUrl: './leaderboard.css',
 })
