@@ -1,0 +1,115 @@
+/* Page Container */
+.leaderboard-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.leaderboard-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Table */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Table Head */
+.leaderboard-table thead {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+}
+
+.leaderboard-table th {
+  padding: 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Table Body */
+.leaderboard-table td {
+  padding: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Alternate Row Colors */
+.leaderboard-table tbody tr:nth-child(even) {
+  background: #f5f7fa;
+}
+
+/* Hover Effect */
+.leaderboard-table tbody tr:hover {
+  background: #e3f2fd;
+  transition: 0.2s ease;
+}
+
+/* Team Name Cell */
+.team-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Team Logo */
+.team-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+  border: 1px solid #ddd;
+}
+
+/* Points Highlight */
+.points {
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+/* Top 3 Highlight */
+.leaderboard-table tbody tr:nth-child(1) {
+  background: #fff8e1;
+}
+
+.leaderboard-table tbody tr:nth-child(2) {
+  background: #f1f8e9;
+}
+
+.leaderboard-table tbody tr:nth-child(3) {
+  background: #e8f5e9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .leaderboard-container {
+    padding: 10px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .team-name {
+    font-size: 14px;
+  }
+}
