@@ -1,1 +1,40 @@
-<h1 align=center>LEADER BOARD</h1>
+
+<div class="leaderboard-container">
+
+  <h2 class="leaderboard-title">Tournament Leaderboard</h2>
+
+  <table class="leaderboard-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Team</th>
+        <th>Played</th>
+        <th>Won</th>
+        <th>Draw</th>
+        <th>Lost</th>
+        <th>Goals</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let team of leaderboard; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td class="team-name">
+          <img
+            [src]="'http://localhost/football_api/uploads/' + team.TeamLogo"
+            class="team-logo"
+          >
+          {{ team.TeamName }}
+        </td>
+        <td>{{ team.Played }}</td>
+        <td>{{ team.Won }}</td>
+        <td>{{ team.Draw }}</td>
+        <td>{{ team.Lost }}</td>
+        <td>{{ team.Goals }}</td>
+        <td class="points">{{ team.Points }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
